@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <!-- Seeded user and role -->
+  <changeSet id="05" author="jpvillaran">
+  	<insert tableName="user">
+  	  <column name="id" valueNumeric="1"/>
+  	  <column name="username" value="admin"/>
+  	  <column name="password" value="$2a$10$SYUdH6cn4xJTKyUlG2MuD.T.hDqay6dgeRAiNx94utnxfOsuUxlLK"/> <!-- BCrypt for 'admin' -->
+  	  <column name="name" value="Admin"/>
+  	  <column name="active" valueNumeric="1"/>
+  	</insert>
+  	<insert tableName="user">
+  	  <column name="id" valueNumeric="2"/>
+  	  <column name="username" value="apiuser"/>
+  	  <column name="password" value="$2a$10$cVMGbVMB6.LCRVsedS8V4.egJradW701nIgX427MYc2T/b/A0P.DO"/> <!-- BCrypt for 'apiuser' -->
+  	  <column name="name" value="API User"/>
+  	  <column name="active" valueNumeric="1"/>
+  	</insert>
+  	<insert tableName="role">
+  	  <column name="id" valueNumeric="1"/>
+  	  <column name="role" value="ADMIN"/>
+  	</insert>
+  	<insert tableName="role">
+  	  <column name="id" valueNumeric="2"/>
+  	  <column name="role" value="API_USER"/>
+  	</insert>
+  	<insert tableName="user_role">
+      <column name="user_id" valueNumeric="1"/>
+      <column name="role_id" valueNumeric="1"/>
+  	</insert>
+  	<insert tableName="user_role">
+      <column name="user_id" valueNumeric="1"/>
+      <column name="role_id" valueNumeric="2"/>
+  	</insert>
+  	<insert tableName="user_role">
+      <column name="user_id" valueNumeric="2"/>
+      <column name="role_id" valueNumeric="2"/>
+  	</insert>
+  </changeSet>
+</databaseChangeLog>

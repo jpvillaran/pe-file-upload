@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <include file="changelog/0001-create-supplier-table.xml" relativeToChangelogFile="true"/>
+  <include file="changelog/0002-create-zipcode-table.xml" relativeToChangelogFile="true"/>
+  <include file="changelog/0003-create-user-and-role-tables.xml" relativeToChangelogFile="true"/>
+  <include file="changelog/0004-add-unique-constraint-for-user-and-role.xml" relativeToChangelogFile="true"/>
+  <include file="changelog/0005-insert-user-and-role-data.xml" relativeToChangelogFile="true"/>
+  
+</databaseChangeLog>
